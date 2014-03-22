@@ -1,0 +1,36 @@
+permalink: /:year/:month/:day/:title.html
+paginate: 10
+markdown: redcarpet
+
+# 作者信息
+author: 
+  name: Freddie
+  email: myzswen@gmail.com
+  link: http://julykobe.github.io
+
+# 站点信息
+title: July's Blog
+description: my blog (original by http://yansu.org)
+url: http://julykobe.github.io
+rss_url: /pages/atom.xml
+
+# gavatar头像及Favicon
+gavatar: /public/upload/gavatar/gavatar.png
+favicon: /public/upload/gavatar/favicon.ico
+
+# google analytics 设置
+# ga:
+  # id: UA-43667383-1
+  # url: yansu.org
+
+# disqus 设置
+disqus:
+  shortname: july 
+
+# 主题设置，自动激活某个标签
+active: 技术
+
+# 中文本地化
+locals:
+  tags: 标签
+  about: 关于
