@@ -5,6 +5,10 @@
 
   /pages/archive.html
 
+  /pages/categories.html
+
+  /pages/tags.html
+
   /pages/about.html
 
   /sitemap.txt

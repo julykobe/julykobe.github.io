@@ -1,6 +1,6 @@
 ### 我的博客
 
-地址：[http://yansu.org](http://yansu.org)
+地址：[http://julykobe.github.io]
 
 ### 安装说明
 
@@ -10,9 +10,4 @@
 4. 修改CNAME，或者删掉这个文件，使用默认域名
 5. 修改`_config.yml`配置项
 6. It's done!
-
-### 分支说明
-
-- 三栏布局（master分支）
-- 单栏布局（first-ui分支）
 
