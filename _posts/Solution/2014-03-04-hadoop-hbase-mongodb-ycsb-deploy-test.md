@@ -152,12 +152,15 @@ Mongodb集群搭建配置（辅助）
 How to compile YCSB for Hbase 0.96.0?
 
 即针对pom.xml需要修改两个地方:
+
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase</artifactId>
       <version>0.96.0-hadoop2</version>
     </dependency>
+
 需要改为：
+    
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-client</artifactId>
