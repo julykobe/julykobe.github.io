@@ -1,3 +1,11 @@
+---
+layout: post
+title: hadoop，hbase，mongodb多节点集群安装入门教程以及ycsb测试性能
+category: 解决方案
+tags: hadoop
+keywords: hadoop，hbase，mongodb,ycsb
+description: hadoop，hbase，mongodb以及ycsb测试入门文档
+---
 突然发现很多同学对搭环境很敬畏，一部分原因在于没有这种经历，另一部分原因便是对linux的不熟悉。
 
 解决办法就两点：
@@ -91,16 +99,18 @@ YCSB-master.zip
 需要注意：
 
   a)，开始前需要创建hadoop用户来操作，在下面提供的文档中说明了哪一步用hadoop用户哪一步用root。
-创建用户用命令：
-adduser [username]
-比如想创建hadoop用户：
-adduser hadoop
-然后就会提示你输入密码等，比useradd更入门级。
+
+  创建用户用命令：
+  adduser [username]
+  比如想创建hadoop用户：
+  adduser hadoop
+  然后就会提示你输入密码等，比useradd更入门级。
 
   b)，在设置hadoop无密码使用root权限的时候，需要修改/erc/sudoers文件，但是有时会发现没有写的权限，无法修改。
-使用root用户给这个文件增加写的权限:
-chmod u+w /etc/sudoers
-即可解决。
+
+  使用root用户给这个文件增加写的权限:
+  chmod u+w /etc/sudoers
+  即可解决。
 
 
 参考文档：
@@ -111,7 +121,7 @@ Hadoop完全分布式模式的安装和配置（主要）
 3.   hbase安装配置
 需要注意：
 
-1，由于hbase版本需要和hadoop版本兼容，所以建议使用我前面提供的文件版本，或者去官网查一下对应版本号。
+  a)，由于hbase版本需要和hadoop版本兼容，所以建议使用我前面提供的文件版本，或者去官网查一下对应版本号。
 
 参考文档：
 HBASE完全分布式模式的安装（主要）
@@ -121,7 +131,7 @@ Hbase官方文档（辅助）
 4.   mongodb安装配置
 需要注意：
 
-1，在32位机器下，需要创建/data/mongodb/log目录:
+  a)，在32位机器下，需要创建/data/mongodb/log目录:
 mkdir /data/mongodb/log -p
 即可。
 
@@ -141,18 +151,17 @@ Mongodb集群搭建配置（辅助）
 
 How to compile YCSB for Hbase 0.96.0?
 
-即针对pom.xml需要修改两个地方，
-
-<dependency>
-  <groupId>org.apache.hbase</groupId>
-  <artifactId>hbase</artifactId>
-  <version>0.96.0-hadoop2</version>
-</dependency>
+即针对pom.xml需要修改两个地方:
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase</artifactId>
+      <version>0.96.0-hadoop2</version>
+    </dependency>
 需要改为：
-<dependency>
-  <groupId>org.apache.hbase</groupId>
-  <artifactId>hbase-client</artifactId>
-  <version>0.96.0-hadoop1</version>
-</dependency>
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase-client</artifactId>
+      <version>0.96.0-hadoop1</version>
+    </dependency>
 
-测试性能的话，看一下workloads下不同的负载文件，然后跑负载，处理数据就行了（一笔带过。。。）
+测试性能的话，看一下workloads下不同的负载文件，然后跑负载，处理数据就行了.
