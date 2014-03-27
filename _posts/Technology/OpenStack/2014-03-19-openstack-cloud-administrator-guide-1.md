@@ -1,3 +1,13 @@
+ ---
+layout: post
+title: Openstack Cloud Administrator Guide 1
+category: 技术
+tags: OpenStack
+keywords: OpenStack,Overview
+description: OpenStack Cloud Administrator Guide是一个面向云管理员的手册，主要作用是manage and troubleshoot an OpenStack cloud。
+---
+
+
  <a href="http://docs.openstack.org/admin-guide-cloud/content/">OpenStack Cloud Administrator Guide</a>是一个面向云管理员的手册，主要作用是manage and troubleshoot an OpenStack cloud。读它可以对各组件有一个整体上的把握。
 
   这里是第一章Get started with OpenStack的穷人版翻译。。
