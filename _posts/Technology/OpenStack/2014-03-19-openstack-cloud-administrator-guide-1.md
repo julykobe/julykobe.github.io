@@ -22,7 +22,7 @@ OpenStack的服务从下面这张表中可以看得很清楚，包括了Heat和C
 ![OpenStack-logical-architecture](/public/upload/OpenStack Cloud Administrator Guide/OpenStack-logical-architecture.jpg)
 Table2 OpenStack Logical Architecture
 
-         OpenStack 的模块是由守护进程(Daomon)，脚本(Script)以及命令行接口(Command-line interface(CLI))组成。守护进程在linux平台表现为服务；脚本用于虚拟环境的安装及测试；CLI允许用户通过易用的命令向OpenStack的服务提交API请求。
+OpenStack 的模块是由守护进程(Daomon)，脚本(Script)以及命令行接口(Command-line interface(CLI))组成。守护进程在linux平台表现为服务；脚本用于虚拟环境的安装及测试；CLI允许用户通过易用的命令向OpenStack的服务提交API请求。
 
  
 
@@ -70,7 +70,7 @@ Table3 Storage types
  
 
 ###Object Storage service(Swift)
-         Swift是一个有高度伸缩以及可持续性的多租户对象存储系统，它通过RESTful HTTP API为大量非结构化的数据以极低的开销来提供存储服务。
+Swift是一个有高度伸缩以及可持续性的多租户对象存储系统，它通过RESTful HTTP API为大量非结构化的数据以极低的开销来提供存储服务。
 
 它包括以下部件：
 
@@ -84,7 +84,7 @@ A number of periodic processes.执行内部任务。主从同步服务(replicati
  
 
 ###Block Storage Service(Cinder)
-         块存储服务允许对卷(volumes)，卷快照，卷类型的管理。它包括以下组件：
+块存储服务允许对卷(volumes)，卷快照，卷类型的管理。它包括以下组件：
 
 cinder-api.接受API请求并根据一定的策略把它们转发(routes)到cinder-volume来执行。
 cinder-volume.响应对块存储数据库的读写请求来维护状态(maintain state),通过一个消息队列和其他进程(如cinder-scheduler)进行交互，并直接基于块存储提供硬件或软件。它可以通过一个驱动架构来和大多数提供存储的服务交互。
@@ -95,7 +95,7 @@ cinder为nova提供虚拟机的卷。
  
 
 ###Networking service overview(Neutron)
-         为设备接口提供网络连接即服务(network-connectivity-as-a-service)，这类设备通常由OpenStack的服务——Compute所管理。它允许用户创建和添加网络接口。像OpenStack的其他服务一样，模块化可插拔的架构使得它可以高度的自由配置。这些插件整合了不同的网络设备和软件，因此，它的架构和部署会发生很大的变化。它包括了如下组件：
+为设备接口提供网络连接即服务(network-connectivity-as-a-service)，这类设备通常由OpenStack的服务——Compute所管理。它允许用户创建和添加网络接口。像OpenStack的其他服务一样，模块化可插拔的架构使得它可以高度的自由配置。这些插件整合了不同的网络设备和软件，因此，它的架构和部署会发生很大的变化。它包括了如下组件：
 
 neutron-server.接受API请求并转发到合适的网络插件中去执行。
 OpenStack Networking plug-ins and agents.绑定以及解绑端口，创建网络和子网，并提供IP地址。这些插件和代理(agent)通常在特定的云中依据代理商和使用的技术而定。目前Neutron支持(ships)的一些插件和代理有Cisco的虚拟和物理交换机，Nicira 的NVP产品，NEC OpenFlow 产品，Open vSwitch, Linux bridging,和Ryu网络操作系统。
@@ -105,12 +105,12 @@ Messaging queue.大部分的Neutron安装版本都利用了消息队列在neutro
  
 
 ###Dashboard(Horizon)
-         dashboard是一个模块化的Django web应用，为OpenStack的服务提供图形化接口。它通常通过mod_wsgi部署在Apache下。你可以对代码进行修改使他适合不同的站点。
+dashboard是一个模块化的Django web应用，为OpenStack的服务提供图形化接口。它通常通过mod_wsgi部署在Apache下。你可以对代码进行修改使他适合不同的站点。
 
-         从网络架构的观点来看，它必须可以被客户和OpenStack的其他服务通过公用API访问。而想要使用其他服务的管理员功能，它必须可以连接到管理员API端点(Admin API endpoints)，因为这个端点是不能被客户直接访问的。
+从网络架构的观点来看，它必须可以被客户和OpenStack的其他服务通过公用API访问。而想要使用其他服务的管理员功能，它必须可以连接到管理员API端点(Admin API endpoints)，因为这个端点是不能被客户直接访问的。
 
 ###Identity Service concepts(Keystone)
-         Identity服务进行如下操作：
+Identity服务进行如下操作：
 
 用户管理。跟踪用户及他们的权限。
 服务目录。提供可用的服务以及他们的API端点的目录。
@@ -144,11 +144,11 @@ Endpoint
 Role
 一个允许用户进行一系列指定操作的身份(personality)。一个角色包括一系列权利以及权限。一个拥有指定角色的用户等于继承了该角色的权利以及权限。
 
-         在Keystone中，授予一个用户的令牌包括了用户拥有的角色列表。用户请求哪个服务取决于怎样翻译(interpret)用户拥有的角色以及每个角色可以访问哪些操作以及资源。
+在Keystone中，授予一个用户的令牌包括了用户拥有的角色列表。用户请求哪个服务取决于怎样翻译(interpret)用户拥有的角色以及每个角色可以访问哪些操作以及资源。
 
  
 
-         下图表示了Keystone的工作流程：
+下图表示了Keystone的工作流程：
 
 
 ![keystone-identity-manager](/public/upload/OpenStack Cloud Administrator Guide/keystone-identity-manager.jpg)
@@ -173,9 +173,9 @@ Storage repository for image files.
 
  
 
-         在Glance中有一些周期性的进程用来支持缓存(caching)。主从同步服务(replication services)保证了集群中的持续性和可用性。其他一些周期性进程包括审计，更新，以及获取(auditors,updaters,reapers)。
+在Glance中有一些周期性的进程用来支持缓存(caching)。主从同步服务(replication services)保证了集群中的持续性和可用性。其他一些周期性进程包括审计，更新，以及获取(auditors,updaters,reapers)。
 
-         在概念架构图上可以看到，Glance是整个IaaS层中的中心。它接受终端用户或者Nova处理镜像或镜像元数据的API请求，然后可以把磁盘文件存储到Swift中。
+在概念架构图上可以看到，Glance是整个IaaS层中的中心。它接受终端用户或者Nova处理镜像或镜像元数据的API请求，然后可以把磁盘文件存储到Swift中。
 
  
 
@@ -216,11 +216,11 @@ An API server(ceilometer-api).
  
 
 ###Orchestration service overview(Heat)
-         Heat对云应用提供了基于模板编排(orchestration……无力)管理，通过OpenStack的API调用来生成运行的云应用。它把OpenStack的其它核心组件整合到了一个单文件模板系统。这套模板允许你创建大部分OpenStack资源类型，比如虚拟机，浮动IP，卷，安全组和用户等。它同时提供了很多更高级的功能，比如虚拟机的高可用性，虚拟机动态伸缩以及嵌套栈等。通过对OpenStack核心组件的紧密整合，所有OpenStack的核心组件可以得到一个更大的用户群(a larger user base)。
+Heat对云应用提供了基于模板编排(orchestration……无力)管理，通过OpenStack的API调用来生成运行的云应用。它把OpenStack的其它核心组件整合到了一个单文件模板系统。这套模板允许你创建大部分OpenStack资源类型，比如虚拟机，浮动IP，卷，安全组和用户等。它同时提供了很多更高级的功能，比如虚拟机的高可用性，虚拟机动态伸缩以及嵌套栈等。通过对OpenStack核心组件的紧密整合，所有OpenStack的核心组件可以得到一个更大的用户群(a larger user base)。
 
-         这项服务允许部署人员直接整合该服务或者可以自定义插件。
+这项服务允许部署人员直接整合该服务或者可以自定义插件。
 
-         Heat包括如下组件：
+Heat包括如下组件：
 
 heat command-line client.
 一个命令行界面，可以和heat-api交互来调用 AWS CloudFormation(就是Amazon的模板) APIs. 终端开发者同样可以直接调用Orchestration REST API。
