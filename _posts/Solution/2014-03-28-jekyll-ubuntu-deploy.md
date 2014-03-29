@@ -27,10 +27,16 @@ description: Jekyll是一个静态站点生成器，它会根据网页源码生�
 
 	rvm install 1.9.2 && rvm use 1.9.2  
 	rvm rubygems latest  
-	sudo apt-get install ruby1.9.1-dev  
+	sudo apt-get install ruby1.9.1-dev
+
 4.安装jekyll：
-	sudo gem install jekyll  
-5.本地调试： 
+
+	sudo gem install jekyll
+
+5.本地调试：
+
 在项目目录下
-	$ jekyll server 
+
+	$ jekyll server
+
 即可通过http://localhost:4000来访问自己的blog了

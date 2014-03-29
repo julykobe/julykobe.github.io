@@ -11,7 +11,7 @@ author:
 # 站点信息
 title: July's Blog
 description: my blog (original by http://yansu.org)
-url: http://julykobe.github.io
+# url: http://julykobe.github.io
 rss_url: /pages/atom.xml
 
 # gavatar头像及Favicon
