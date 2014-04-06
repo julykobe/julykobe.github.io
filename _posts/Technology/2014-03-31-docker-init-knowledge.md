@@ -15,4 +15,4 @@ Docker 是一个开源可以将任何应用包装在”LXC容器”中运行的�
 
 好了，做梦结束，入门的话看下面这篇干货！
 
-http://pchou.info/open-source/2014/03/29/docker-introduction.html#jtss-tsina
+<a href="http://pchou.info/open-source/2014/03/29/docker-introduction.html#jtss-tsina">Docker简介与入门</a>
